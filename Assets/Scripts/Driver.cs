@@ -7,6 +7,7 @@ public class Driver : MonoBehaviour
     [SerializeField] float steerSpeed = 200f;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float speedUp = 1f;
+    [SerializeField] GameObject nitro;
     void Start()
     {
 
@@ -19,5 +20,7 @@ public class Driver : MonoBehaviour
 
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
+
+        nitro.SetActive(Input.GetButton("Jump"));
     }
 }
