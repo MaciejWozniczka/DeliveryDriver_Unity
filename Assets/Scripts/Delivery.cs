@@ -11,12 +11,16 @@ public class Delivery : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.tag == "Package"){
+        if (other.tag == "Package")
+        {
             Debug.Log("Package picked up");
+            hasPackage = true;
         }
         
-        if (other.tag == "Destination"){
+        if (other.tag == "Destination" && hasPackage)
+        {
             Debug.Log("Package delivered");
+            hasPackage = false;
         }
     }
 }
