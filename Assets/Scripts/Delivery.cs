@@ -6,6 +6,7 @@ using UnityEngine;
 public class Delivery : MonoBehaviour
 {
     bool hasPackage = false;
+    bool readyForNextRound = false;
     private bool textIsDisplayed = false;
     public TextMeshProUGUI textUI;
     public int currentRound = 1;
@@ -59,8 +60,13 @@ public class Delivery : MonoBehaviour
         {
             textUI.text = "Przesyłka dostarczona!";
             textUI.enabled = true;
+            
+            if (readyForNextRound)
+            {
+                ChangeRound();
+                readyForNextRound = false;
+            }
 
-            ChangeRound();
             StartCoroutine(HideTextAfterDelay());
         }
         else if (currentRound == 8)
@@ -127,6 +133,7 @@ public class Delivery : MonoBehaviour
             Debug.Log("Package delivered");
             hasPackage = false;
             textIsDisplayed = true;
+            readyForNextRound = true;
             Destroy(other.gameObject);
         }
     }
