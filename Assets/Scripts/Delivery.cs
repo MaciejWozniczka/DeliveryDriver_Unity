@@ -30,7 +30,7 @@ public class Delivery : MonoBehaviour
     [SerializeField] GameObject destination8;
     [SerializeField] GameObject destination9;
     [SerializeField] GameObject destination10;
-
+    
     void Start()
     {
         package1.SetActive(true);
