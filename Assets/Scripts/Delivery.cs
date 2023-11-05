@@ -18,6 +18,8 @@ public class Delivery : MonoBehaviour
     [SerializeField] GameObject package6;
     [SerializeField] GameObject package7;
     [SerializeField] GameObject package8;
+    [SerializeField] GameObject package9;
+    [SerializeField] GameObject package10;
     [SerializeField] GameObject destination1;
     [SerializeField] GameObject destination2;
     [SerializeField] GameObject destination3;
@@ -26,6 +28,8 @@ public class Delivery : MonoBehaviour
     [SerializeField] GameObject destination6;
     [SerializeField] GameObject destination7;
     [SerializeField] GameObject destination8;
+    [SerializeField] GameObject destination9;
+    [SerializeField] GameObject destination10;
 
     void Start()
     {
@@ -37,6 +41,8 @@ public class Delivery : MonoBehaviour
         package6.SetActive(false);
         package7.SetActive(false);
         package8.SetActive(false);
+        package9.SetActive(false);
+        package10.SetActive(false);
 
         destination1.SetActive(true);
         destination2.SetActive(false);
@@ -46,6 +52,8 @@ public class Delivery : MonoBehaviour
         destination6.SetActive(false);
         destination7.SetActive(false);
         destination8.SetActive(false);
+        destination9.SetActive(false);
+        destination10.SetActive(false);
     }
 
     private void Update()
@@ -69,9 +77,9 @@ public class Delivery : MonoBehaviour
 
             StartCoroutine(HideTextAfterDelay());
         }
-        else if (currentRound == 8)
+        else if (currentRound == 10)
         {
-            textUI.text = "Przesyłka dostarczona!";
+            textUI.text = "Wygrałeś! Gratulacje!";
             textUI.enabled = true;
 
             StartCoroutine(HideTextAfterDelay());
@@ -111,6 +119,14 @@ public class Delivery : MonoBehaviour
             destination8.SetActive(true);
             break;
             case 8:
+            package9.SetActive(true);
+            destination9.SetActive(true);
+            break;
+            case 9:
+            package10.SetActive(true);
+            destination10.SetActive(true);
+            break;
+            case 10:
             textIsDisplayed = true;
             break;
         }
