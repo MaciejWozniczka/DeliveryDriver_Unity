@@ -1,17 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Delivery : MonoBehaviour
 {
     bool hasPackage = false;
-    [SerializeField] Color32 hasPackageColor = new Color32(1, 1, 0, 1); 
-    [SerializeField] Color32 noPackageColor = new Color32(1, 1, 1, 1); 
-    SpriteRenderer spriteRenderer;
+    private bool textIsDisplayed = false;
+    public TextMeshProUGUI textUI;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (textIsDisplayed && hasPackage)
+        {
+            textUI.text = "Przesyłka zebrana!";
+            textUI.enabled = true;
+            StartCoroutine(HideTextAfterDelay());
+        }
+        else if (textIsDisplayed && !hasPackage)
+        {
+            textUI.text = "Przesyłka dostarczona!";
+            textUI.enabled = true;
+            StartCoroutine(HideTextAfterDelay());
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other) 
@@ -25,7 +40,7 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log("Package picked up");
             hasPackage = true;
-            spriteRenderer.color = hasPackageColor;
+            textIsDisplayed = true;
             Destroy(other.gameObject);
         }
         
@@ -33,7 +48,14 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log("Package delivered");
             hasPackage = false;
-            spriteRenderer.color = noPackageColor;
+            textIsDisplayed = true;
         }
+    }
+
+    private IEnumerator HideTextAfterDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        textUI.enabled = false;
+        textIsDisplayed = false;
     }
 }
