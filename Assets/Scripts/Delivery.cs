@@ -29,14 +29,9 @@ public class Delivery : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other) 
-    {
-        Debug.Log("Ouch! "+ other.gameObject.name);
-    }
-
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.tag == "Package" && !hasPackage)
+        if (other.tag == "Package" && other.enabled && !hasPackage)
         {
             Debug.Log("Package picked up");
             hasPackage = true;
@@ -44,11 +39,12 @@ public class Delivery : MonoBehaviour
             Destroy(other.gameObject);
         }
         
-        if (other.tag == "Destination" && hasPackage)
+        if (other.tag == "Destination" && other.enabled && hasPackage)
         {
             Debug.Log("Package delivered");
             hasPackage = false;
             textIsDisplayed = true;
+            Destroy(other.gameObject);
         }
     }
 
