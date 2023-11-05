@@ -15,10 +15,18 @@ public class Driver : MonoBehaviour
 
     void Update()
     {
-        float steerAmount = steerSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
-        float moveAmount = moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime * (Input.GetAxis("Jump") + speedUp);
+        if (Input.GetAxis("Vertical") == 1)
+        {
+            float steerAmount = steerSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
+            transform.Rotate(0, 0, -steerAmount);
+        }
+        else if (Input.GetAxis("Vertical") == -1)
+        {
+            float steerAmount = steerSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
+            transform.Rotate(0, 0, steerAmount);
+        }
 
-        transform.Rotate(0, 0, -steerAmount);
+        float moveAmount = moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime * (Input.GetAxis("Jump") + speedUp);
         transform.Translate(0, moveAmount, 0);
 
         nitro.SetActive(Input.GetButton("Jump"));
