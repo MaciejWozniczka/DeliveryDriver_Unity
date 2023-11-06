@@ -101,97 +101,97 @@ public class Delivery : MonoBehaviour
             case 1:
             package1.SetActive(false);
             destination1.SetActive(true);
-            pointer.targetPosition = new Vector3(45.7f, 59.9f, 0);
+            pointer.targetPosition = destination1.transform.position;
             break;
             case 2:
             destination1.SetActive(false);
             package2.SetActive(true);
-            pointer.targetPosition = new Vector3(-34.8f, 33.5f, 0);
+            pointer.targetPosition = package2.transform.position;
             break;
             case 3:
             package2.SetActive(false);
             destination2.SetActive(true);
-            pointer.targetPosition = new Vector3(35.2f, -13.4f, 0);
+            pointer.targetPosition = destination2.transform.position;
             break;
             case 4:
             destination2.SetActive(false);
             package3.SetActive(true);
-            pointer.targetPosition = new Vector3(-48.5f, -60.7f, 0);
+            pointer.targetPosition = package3.transform.position;
             break;
             case 5:
             package3.SetActive(false);
             destination3.SetActive(true);
-            pointer.targetPosition = new Vector3(-49f, 42.2f, 0);
+            pointer.targetPosition = destination3.transform.position;
             break;
             case 6:
             destination3.SetActive(false);
             package4.SetActive(true);
-            pointer.targetPosition = new Vector3(24.9f, -60.9f , 0);
+            pointer.targetPosition = package4.transform.position;
             break;
             case 7:
             package4.SetActive(false);
             destination4.SetActive(true);
-            pointer.targetPosition = new Vector3(28.9f, 44.5f, 0);
+            pointer.targetPosition = destination4.transform.position;
             break;
             case 8:
             destination4.SetActive(false);
             package5.SetActive(true);
-            pointer.targetPosition = new Vector3(36.2f, 6.7f, 0);
+            pointer.targetPosition = package5.transform.position;
             break;
             case 9:
             package5.SetActive(false);
             destination5.SetActive(true);
-            pointer.targetPosition = new Vector3(-34.7f, 31.6f, 0);
+            pointer.targetPosition = destination5.transform.position;
             break;
             case 10:
             destination5.SetActive(false);
             package6.SetActive(true);
-            pointer.targetPosition = new Vector3(-36.3f, -2.7f, 0);
+            pointer.targetPosition = package6.transform.position;
             break;
             case 11:
             package6.SetActive(false);
             destination6.SetActive(true);
-            pointer.targetPosition = new Vector3(-14.8f, 58.7f, 0);
+            pointer.targetPosition = destination6.transform.position;
             break;
             case 12:
             destination6.SetActive(false);
             package7.SetActive(true);
-            pointer.targetPosition = new Vector3(35.2f, -13.9f, 0);
+            pointer.targetPosition = package7.transform.position;
             break;
             case 13:
             package7.SetActive(false);
             destination7.SetActive(true);
-            pointer.targetPosition = new Vector3(7.3f, 4f, 0);
+            pointer.targetPosition = destination7.transform.position;
             break;
             case 14:
             destination7.SetActive(false);
             package8.SetActive(true);
-            pointer.targetPosition = new Vector3(41.7f, 6.7f, 0);
+            pointer.targetPosition = package8.transform.position;
             break;
             case 15:
             package8.SetActive(false);
             destination8.SetActive(true);
-            pointer.targetPosition = new Vector3(-48.5f, -60.4f, 0);
+            pointer.targetPosition = destination8.transform.position;
             break;
             case 16:
             destination8.SetActive(false);
             package9.SetActive(true);
-            pointer.targetPosition = new Vector3(27.8f, -61f, 0);
+            pointer.targetPosition = package9.transform.position;
             break;
             case 17:
             package9.SetActive(false);
             destination9.SetActive(true);
-            pointer.targetPosition = new Vector3(38.8f, 7.4f, 0);
+            pointer.targetPosition = destination9.transform.position;
             break;
             case 18:
             destination9.SetActive(false);
             package10.SetActive(true);
-            pointer.targetPosition = new Vector3(7.4f, 3.6f, 0);
+            pointer.targetPosition = package10.transform.position;
             break;
             case 19:
             package10.SetActive(false);
             destination10.SetActive(true);
-            pointer.targetPosition = new Vector3(-44.2f, -2.4f, 0);
+            pointer.targetPosition = destination10.transform.position;
             break;
             case 20:
             destination10.SetActive(false);
