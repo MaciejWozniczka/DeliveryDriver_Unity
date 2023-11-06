@@ -111,12 +111,12 @@ public class Delivery : MonoBehaviour
             case 3:
             package2.SetActive(false);
             destination2.SetActive(true);
-            pointer.targetPosition = new Vector3(35.2f, 13.4f, 0);
+            pointer.targetPosition = new Vector3(35.2f, -13.4f, 0);
             break;
             case 4:
             destination2.SetActive(false);
             package3.SetActive(true);
-            pointer.targetPosition = new Vector3(-48.5f, 60.7f, 0);
+            pointer.targetPosition = new Vector3(-48.5f, -60.7f, 0);
             break;
             case 5:
             package3.SetActive(false);
@@ -146,7 +146,7 @@ public class Delivery : MonoBehaviour
             case 10:
             destination5.SetActive(false);
             package6.SetActive(true);
-            pointer.targetPosition = new Vector3(36.3f, -2.7f, 0);
+            pointer.targetPosition = new Vector3(-36.3f, -2.7f, 0);
             break;
             case 11:
             package6.SetActive(false);
