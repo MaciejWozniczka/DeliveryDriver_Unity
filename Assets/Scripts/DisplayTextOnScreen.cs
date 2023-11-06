@@ -6,6 +6,7 @@ using UnityEngine;
 public class DisplayTextOnScreen : MonoBehaviour
 {
     public TextMeshProUGUI textUI;
+    [SerializeField] public GameObject message;
     private void Start()
     {
         StartCoroutine(HideTextAfterDelay());
@@ -16,6 +17,7 @@ public class DisplayTextOnScreen : MonoBehaviour
         yield return new WaitForSeconds(5f);
         textUI.text = "";
         textUI.enabled = false;
+        message.SetActive(false);
     }
 
     private void Update()

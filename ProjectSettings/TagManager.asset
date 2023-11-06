@@ -9,6 +9,7 @@ TagManager:
   - Street
   - Car
   - Navigation
+  - Instruction
   layers:
   - Default
   - TransparentFX
