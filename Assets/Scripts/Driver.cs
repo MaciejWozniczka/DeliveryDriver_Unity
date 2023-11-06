@@ -5,7 +5,7 @@ using UnityEngine;
 public class Driver : MonoBehaviour
 {
     [SerializeField] float steerSpeed = 200f;
-    [SerializeField] float moveSpeed = 15f;
+    [SerializeField] float moveSpeed = 12f;
     [SerializeField] float speedUp = 1f;
     [SerializeField] GameObject nitro;
     void Start()
