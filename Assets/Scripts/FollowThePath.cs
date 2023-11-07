@@ -6,7 +6,7 @@ using CodeMonkey.Utils;
 public class FollowThePath : MonoBehaviour
 {
     [SerializeField] Transform[] waypoints;
-    [SerializeField] float moveSpeed = 10f;
+    float moveSpeed = 10f;
     private int waypointIndex = 0;
     void Start()
     {

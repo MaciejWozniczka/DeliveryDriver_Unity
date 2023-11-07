@@ -6,11 +6,15 @@ using CodeMonkey.Utils;
 public class PlaneFollowThePath : MonoBehaviour
 {
     [SerializeField] Transform[] waypoints;
-    [SerializeField] float moveSpeed = 10f;
+    float moveSpeed = 20f;
+    [SerializeField] Sprite planeOneSprite;
+    [SerializeField] Sprite planeTwoSprite;
+    private SpriteRenderer spriteRenderer;
     private int waypointIndex = 0;
     void Start()
     {
         transform.position = waypoints[waypointIndex].transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -49,5 +53,13 @@ public class PlaneFollowThePath : MonoBehaviour
     private IEnumerator WaitBeforeNextFlight()
     {
         yield return new WaitForSeconds(5f);
+        if (spriteRenderer.sprite == planeOneSprite)
+        {
+            spriteRenderer.sprite = planeTwoSprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = planeOneSprite;
+        }
     }
 }
