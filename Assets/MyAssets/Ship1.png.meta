@@ -101,10 +101,10 @@ TextureImporter:
       name: Ship1_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 179
-        width: 1440
-        height: 411
+        x: 160
+        y: 21
+        width: 411
+        height: 1440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
