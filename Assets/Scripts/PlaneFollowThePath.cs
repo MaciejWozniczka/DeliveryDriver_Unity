@@ -40,19 +40,18 @@ public class PlaneFollowThePath : MonoBehaviour
             if (transform.position == waypoints[waypointIndex].transform.position)
             {
                 waypointIndex++;
+                ChangePlaneSprite();
             }
         }
         else
         {
             waypointIndex = 0;
+            ChangePlaneSprite();
         }
-
-        StartCoroutine(WaitBeforeNextFlight());
     }
 
-    private IEnumerator WaitBeforeNextFlight()
+    private void ChangePlaneSprite()
     {
-        yield return new WaitForSeconds(5f);
         if (spriteRenderer.sprite == planeOneSprite)
         {
             spriteRenderer.sprite = planeTwoSprite;
